@@ -1,0 +1,20 @@
+<form [formGroup]="productForm" (ngSubmit)="handleSubmit()">
+  <div class="input-group">
+    <label>Nome</label>
+    <input class="form-control" formControlName="name"/>
+  </div>
+  <div class="input-group">
+    <label>Preço</label>
+    <input currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }" class="form-control" formControlName="price"/>
+  </div>
+  <div class="input-group">
+    <label>Imagem</label>
+    <input class="form-control" formControlName="image"/>
+  </div>
+  
+  <button type="submit" [disabled]="productForm.invalid">
+    Salvar
+  </button>
+
+  <img [src]="productForm.value.image"/>
+</form>

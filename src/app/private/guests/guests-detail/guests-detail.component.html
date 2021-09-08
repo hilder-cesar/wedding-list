@@ -1,0 +1,17 @@
+<form [formGroup]="guestForm" (ngSubmit)="handleSubmit()">
+  <div class="input-group">
+    <label>Nome</label>
+    <input class="form-control" formControlName="name"/>
+  </div>
+  <div class="input-group">
+    <label>Email</label>
+    <input class="form-control" formControlName="email"/>
+  </div>
+  <div class="input-group">
+    <label>Telefone</label>
+    <input class="form-control" mask="(00) 0000-0000 || (00) 0 0000-0000" formControlName="phone"/>
+  </div>
+  <button [disabled]="guestForm.invalid">
+    Salvar
+  </button>
+</form>

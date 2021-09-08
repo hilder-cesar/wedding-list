@@ -1,0 +1,23 @@
+<button routerLink="/app/convidados/criar">
+  Novo convidado
+</button>
+
+<table class="table">
+  <thead>
+    <th>Nome</th>
+    <th>E-mail</th>
+    <th>Telefone</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let guest of guestList">
+      <td>{{guest.name}}</td>
+      <td>{{guest.email}}</td>
+      <td>{{guest.phone | mask:'(00) 0 0000-0000||(00) 0000-0000' }}</td>
+      <td>
+        <fa-icon [icon]="faEdit" [routerLink]="['/app/convidados/detalhes/', guest.id]"></fa-icon>
+        <fa-icon [icon]="faTrash"></fa-icon>
+      </td>
+    </tr>
+  </tbody>
+</table>

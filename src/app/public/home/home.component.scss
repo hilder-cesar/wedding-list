@@ -1,0 +1,13 @@
+@import "~src/assets/sass/all";
+
+.section {
+  padding-top: 8rem;
+  background: $primary url("/assets/images/hc-background.png") no-repeat;
+  background-size: cover;
+  background-position-y: 50px;
+  min-height: 100vh;
+  width: 100%;
+  color: $color-white;
+  position: relative;
+  @include flexbox(flex, row, wrap, center, center, center);
+}

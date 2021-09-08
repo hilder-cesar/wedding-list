@@ -1,0 +1,21 @@
+<button routerLink="/app/produtos/criar">
+  Novo produto
+</button>
+
+<table class="table">
+  <thead>
+    <th>Nome</th>
+    <th>Preço</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of productList">
+      <td>{{product.name}}</td>
+      <td>{{product.price | currency:'BRL':'symbol':'0.2-2':'pt'}}</td>
+      <td>
+        <fa-icon [icon]="faEdit" [routerLink]="['/app/produtos/detalhes/', product.id]"></fa-icon>
+        <fa-icon [icon]="faTrash"></fa-icon>
+      </td>
+    </tr>
+  </tbody>
+</table>
